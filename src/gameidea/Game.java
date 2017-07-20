@@ -50,8 +50,8 @@ public class Game {
         
         // Option: Debug section
         
-        Dungeon dun = new Dungeon("test"); // Debug for testing the dungeon
-        dun.delve();
+        Town town = new Town();
+        town.enter();
     }
     
     private class CharacterCreation {
@@ -182,8 +182,8 @@ public class Game {
                 }
                 
                 System.out.println("1) Fight");
-                System.out.println("2) Seppuku");
-                System.out.println("3) Wait");
+                System.out.println("2) Items");
+                System.out.println("3) Defend");
                 System.out.print("> ");
                 
                 input = scan.nextLine(); // Player choice
@@ -196,12 +196,11 @@ public class Game {
                         }
                         break;
                     case "2":
-                        System.out.println("You disembowel yourself.  You have brought great honor upon your family.");
-                        System.out.println("GAME OVER");
-                        System.exit(0);
+                        System.out.println("This feature is locked until inventory system has been added");
                         break;
                     case "3":
-                        System.out.println("You glare at the rat, a pathetic attempt at intidmiation.");
+                        System.out.println("This feature will decrease the damage you take based off defence items once implemented");
+                        break;
                 }
                 
                 if (inBattle) {
@@ -220,7 +219,7 @@ public class Game {
         }
     }
     
-    public class town {
+    private class Town {
         
         void enter() {
             
@@ -258,6 +257,7 @@ public class Game {
             }
         }
         
+        // All outputs here are currently placeholder jokes, this is not a reflection of anything in the future
         void itemShop() {
             System.out.println("You see a man stocking shelves in the shop.");
             System.out.println("You notice that much of the shelves are empty.");
@@ -266,11 +266,13 @@ public class Game {
         }
         
         void blacksmith() {
-            
+            System.out.println("The blacksmith peers at you from over his shoulder.");
+            System.out.println("\"I AM ERROR\".");
+            System.out.println("You leave.");
         }
         
         void tavern() {
-            
+            System.out.println("You don't have enough gold to pay the enterance fee.");
         }
         
         void dungeon() {
